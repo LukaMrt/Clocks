@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.lukam'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:3.2.4'
+    testImplementation 'org.assertj:assertj-core:3.14.0'
+}
