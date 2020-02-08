@@ -4,6 +4,6 @@ import fr.lukam.clock.domain.model.Time;
 
 public interface Clock {
 
-    String getTime(Time time);
+    void displayTime(Time time);
 
 }
