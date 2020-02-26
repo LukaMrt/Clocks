@@ -1,4 +1,4 @@
-package fr.lukam.clock.main.console;
+package fr.lukam.clock.main.console.providers;
 
 import fr.lukam.clock.application.Application;
 
