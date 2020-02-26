@@ -1,12 +1,12 @@
 package fr.lukam.clock.infrastructure.presenters;
 
-import fr.lukam.clock.infrastructure.ViewModel;
+import fr.lukam.clock.infrastructure.model.ConsoleViewModel;
 
-public class BerlinClockPresenter implements ClockPresenter {
+public class ConsolePresenter implements Presenter {
 
-    private final ViewModel viewModel;
+    private final ConsoleViewModel viewModel;
 
-    public BerlinClockPresenter(ViewModel viewModel) {
+    public ConsolePresenter(ConsoleViewModel viewModel) {
         this.viewModel = viewModel;
     }
 

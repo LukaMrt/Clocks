@@ -5,9 +5,9 @@ import fr.lukam.clock.domain.model.Hours;
 import fr.lukam.clock.domain.model.Minutes;
 import fr.lukam.clock.domain.model.Seconds;
 import fr.lukam.clock.domain.model.Time;
-import fr.lukam.clock.infrastructure.ViewModel;
-import fr.lukam.clock.infrastructure.presenters.BerlinClockPresenter;
-import fr.lukam.clock.infrastructure.presenters.ClockPresenter;
+import fr.lukam.clock.fake.architecture.presenters.FakePresenter;
+import fr.lukam.clock.infrastructure.model.ConsoleViewModel;
+import fr.lukam.clock.infrastructure.presenters.Presenter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,14 +15,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BerlinClockTest {
 
-    private ViewModel viewModel;
+    private ConsoleViewModel viewModel;
     private Clock berlinClock;
 
     @Before
     public void setUp() {
-        this.viewModel = new ViewModel();
-        ClockPresenter clockPresenter = new BerlinClockPresenter(viewModel);
-        this.berlinClock = new BerlinClock(clockPresenter);
+        this.viewModel = new ConsoleViewModel();
+        Presenter presenter = new FakePresenter(viewModel);
+        this.berlinClock = new BerlinClock(presenter);
     }
 
 //    R

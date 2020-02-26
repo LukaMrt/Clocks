@@ -8,11 +8,11 @@ import fr.lukam.clock.domain.berlinclock.hours.SecondLineFirstLineHoursCalcul;
 import fr.lukam.clock.domain.berlinclock.minutes.FirstLineMinutesCalcul;
 import fr.lukam.clock.domain.berlinclock.minutes.SecondsLineMinutesCalcul;
 import fr.lukam.clock.domain.berlinclock.seconds.SecondsCalcul;
-import fr.lukam.clock.infrastructure.presenters.ClockPresenter;
+import fr.lukam.clock.infrastructure.presenters.Presenter;
 
 public class BerlinClock implements Clock {
 
-    private final ClockPresenter clockPresenter;
+    private final Presenter presenter;
 
     private final SecondsCalcul secondsCalcul;
     private final HoursCalcul firstLineHoursCalcul;
@@ -20,8 +20,8 @@ public class BerlinClock implements Clock {
     private final FirstLineMinutesCalcul firstLineMinutesCalcul;
     private final SecondsLineMinutesCalcul secondsLineMinutesCalcul;
 
-    public BerlinClock(ClockPresenter clockPresenter) {
-        this.clockPresenter = clockPresenter;
+    public BerlinClock(Presenter presenter) {
+        this.presenter = presenter;
         this.secondsCalcul = new SecondsCalcul();
         this.firstLineHoursCalcul = new FirstLineHoursCalcul();
         this.secondLineHoursCalcul = new SecondLineFirstLineHoursCalcul();
@@ -32,7 +32,7 @@ public class BerlinClock implements Clock {
     @Override
     public void displayTime(Time time) {
 
-        this.clockPresenter.presentTime(new StringBuilder()
+        this.presenter.presentTime(new StringBuilder()
                 .append(this.secondsCalcul.getSeconds(time.seconds))
                 .append(" ")
                 .append(this.firstLineHoursCalcul.getHours(time.hours))
