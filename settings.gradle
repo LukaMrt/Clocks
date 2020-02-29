@@ -1,2 +1,6 @@
 rootProject.name = 'Berlinclock'
+include 'Domain'
+include 'Application'
+include 'View'
+include 'Infrastructure'
 
